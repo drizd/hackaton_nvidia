@@ -1,0 +1,1134 @@
+<html>
+
+<head>
+    <!--Main css stylesheet-->
+    <link rel="stylesheet" href="main.css">
+    <!--Social media links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function carousel_switch(boxId,slideId) {
+            // make current active bar not active
+            let oldActiveElement = document.querySelector('.activeBox');
+            oldActiveElement.classList.remove('activeBox');
+
+            // make current make bar active
+            document.getElementById(boxId).classList.add("activeBox");
+
+            // hide current slide
+            let oldActiveSlide = document.querySelector('.cmp-carousel_visible');
+            oldActiveSlide.classList.remove('cmp-carousel_visible');
+            oldActiveSlide.classList.add('cmp-carousel__item--hidden');
+            oldActiveSlide.classList.add('cmp-carousel__item--visuallyhidden');
+
+            // load slide
+            document.getElementById(slideId).classList.remove('cmp-carousel__item--hidden');
+            document.getElementById(slideId).classList.remove('cmp-carousel__item--visuallyhidden');
+            document.getElementById(slideId).classList.add('cmp-carousel_visible');
+
+        };
+
+        function support_ukraine() {
+            alert ("Thank you for supporting Ukraine!");
+        }
+
+        function search_open(){
+            // show search div
+            document.getElementsByClassName("search_white")[0].classList.add('search-shown');
+            // change icon
+            document.getElementById("search_icon").classList.add('hide');
+            document.getElementsByClassName("search-abort-container")[0].classList.remove('hide');
+        }
+
+        function search_close(){
+            // close search div
+            document.getElementsByClassName("search_white")[0].classList.remove('search-shown');
+            // change icon
+            document.getElementById("search_icon").classList.remove('hide');
+            document.getElementsByClassName("search-abort-container")[0].classList.add('hide');
+
+        }
+
+        function search_redirect() {
+            let searchKey = document.getElementsByClassName("search-box-input")[0].value;
+            let url = "https://www.nvidia.com/en-us/search/?page=1&q="+ searchKey +"&sort=relevance";
+            window.open(url, '_blank').focus();
+            
+        }
+
+    </script>
+</head>
+
+<body>
+     <!--Header-->
+     <header>
+        <div class="nav-header-container">
+            <div class="brand-container">
+                <a class="brand-link pull-left nvidia-logo" href="index.html"
+                    title="Artificial Intelligence Computing Leadership from NVIDIA">
+                    <img class="brand-icon" src="icons/brand.png">
+                </a>
+            </div>
+            <div class="nv-nav-container nv-menu">
+                <ul id="main-menu-navigation" class="nv-menu-list left">
+                    <li class=" nv-menu-item tmenu">
+                        <label class="nv-menu-button menu-level-1">Products</label>
+                    </li>
+                    <li class=" nv-menu-item tmenu">
+                        <label class="nv-menu-button menu-level-1">Solutions</label>
+                    </li>
+                    <li class=" nv-menu-item tmenu">
+                        <label class="nv-menu-button menu-level-1">Industries</label>
+                    </li>
+                    <li class=" nv-menu-item tmenu">
+                        <label class="nv-menu-button menu-level-1">For You</label>
+                    </li>
+                </ul>
+                <ul class="nv-menu-list right">
+                    <li class="nv-menu-item">
+                        <a class="menu-button-link menu-level-1" href ="https://store.nvidia.com/en-us/" style="text-decoration: none;">Shop</a>
+                    </li>
+                    <li class="nv-menu-item">
+                        <a class="menu-button-link menu-level-1" href="https://www.nvidia.com/Download/index.aspx?lang=en-us" style="text-decoration: none;">Drivers</a>
+                    </li>
+                    <li class="nv-menu-item">
+                        <a class="menu-button-link menu-level-1" href="https://www.nvidia.com/en-us/support/" style="text-decoration: none;">Support</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-tools-container">
+                <ul class="nav-header-list">
+                    <li class="nav-header-item search-item">
+                        <div class="search-abort-container hide">
+                            <a class="search-abort" href="#" onclick="search_close()">
+                                <div class="fa fa-close " style="scale:130%"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-header-item search-item">
+                        <a class="menu-level-1" id="search_icon" href="#" onclick="search_open()">
+                            <div class="fa fa-search " style="padding-top:10px; scale:130%"></div>
+                        </a>
+                        <div class="search-main-section">
+                            <div class="search-section">
+                                <div class="search_white">
+                                    <div class="search-outter-container">
+                                        <div class="search-inner-container">
+                                            <form class="search-form ">
+                                                <input aria-label="Search" data-search-box-input="" class="search-box-input placeholder" type="text" id="search-terms" name="q" value="" placeholder="Search NVIDIA" autocomplete="off">
+                                            </form>
+                                            <div class="search-icon-container">
+                                                <div class="fa fa-search" style="padding-top:5px" onclick="search_redirect()"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-header-item profile-item">
+                        <a id="nv-login" class="nav-profile-link menu-level-1" href="pages/login_page.html">
+                            <div class="fa fa-user" style="padding-top: 10px; scale:130%"></div>
+                        </a>
+                    </li>
+                    <li class="nav-header-item">
+                        <a class="support_ukraine" href="https://unitedhelpukraine.org/">
+                            <img class="support_icon" src="icons/support_ukarine/GIF-07c5373621ac779ba0b646ec26525718.gif" onclick="support_ukraine()" style="width:40px;height:40px">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    
+    <div class="aem-Grid">
+        <!--Body-->
+        <div class="responsivegrid">
+            <div class="aem-Grid">
+                <!--Carousel with images and text-->
+                <div
+                    class="nv-carousel-home carousel panelcontainer nv-carousel--hide-arrows nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12">
+                    <div id="carousel-774605c185" class="cmp-carousel">
+                        <div class="cmp-carousel__content progressbar" aria-atomic="false" aria-live="off"
+                            data-autopause="true">
+                            <!--Carousel slides-->
+                            <div class="cmp-carousel__slides">
+                                <!--Carousel first slide-->
+                                <div id="carousel-tabpanel-1" class="cmp-carousel__item cmp-carousel_visible"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 1 of 6"
+                                    data-cmp-slide-no="1" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-01"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/carousel_1@2x.jpg 2x">
+                                                    <img src="icons/carousel_1@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-01-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-01-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #fff;">AI</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-01-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-01-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #fff;">
+                                                                NVIDIA and ServiceNow Showcase AI Avatars of the Future
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-01-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-01-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;"> Announced
+                                                                    today at Knowledge 2024, ServiceNow demos generative
+                                                                    AI Now Assist avatars powered by NVIDIA AI
+                                                                    Enterprise software, including NVIDIA NIM and NVIDIA
+                                                                    ACE.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-01-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-01-1" href="">
+                                                            <span class="btn-text">Read the Blog</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-01-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="carousel-tabpanel-2"
+                                    class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item--visuallyhidden"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 2 of 6"
+                                    data-cmp-slide-no="2" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-02"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/dell-tech-world-wmfg-bb770_550-d@2x.jpg 2x">
+                                                    <img src="icons/dell-tech-world-wmfg-bb770_550-d@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-02-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-02-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #000;">Artificial
+                                                                Intelligence</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-02-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-02-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #000;">
+                                                                NVIDIA CEO Jensen Huang at Dell Technologies World</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-02-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-02-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #000;">Hear NVIDIA
+                                                                    CEO Jensen Huang and Dell Technologies Chairman and
+                                                                    CEO Michael Dell dive into how AI is igniting
+                                                                    innovation across enterprises. May 20, 10:00 a.m
+                                                                    P.T.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-02-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-02-1" href="">
+                                                            <span class="btn-text">Save the date</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-02-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="carousel-tabpanel-3"
+                                    class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item--visuallyhidden"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 3 of 6"
+                                    data-cmp-slide-no="3" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-03"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/microsoft-wmfg-bb770_550-d@2x.jpg 2x">
+                                                    <img src="icons/microsoft-wmfg-bb770_550-d@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-03-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-03-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #fff;">AI</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-03-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-03-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #fff;">
+                                                                Join NVIDIA at<br>Microsoft Build 2024</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-03-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-03-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;">May
+                                                                    22–25</span>
+                                                            </p>
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;">Hear how
+                                                                    NVIDIA and Microsoft are partnering to accelerate
+                                                                    the development and deployment of generative
+                                                                    AI.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-03-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-03-1" href="">
+                                                            <span class="btn-text">Read the Blog</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-03-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="carousel-tabpanel-4"
+                                    class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item--visuallyhidden"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 4 of 6"
+                                    data-cmp-slide-no="4" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-04"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/carousel_4@2x.jpg 2x">
+                                                    <img src="icons/carousel_4@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-04-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-04-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #fff;">Artificial
+                                                                Intelligence</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-04-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-04-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #fff;">
+                                                                ChatRTX Update Available Now</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-04-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-04-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;">Create an AI
+                                                                    chatbot connected to your content with the ChatRTX
+                                                                    demo app. Get fast and secure answers, all locally
+                                                                    on your RTX-accelerated PC, using RAG and
+                                                                    TensorRT-LLM. Now with support for voice and image
+                                                                    search, plus new models.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-04-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-04-1" href="">
+                                                            <span class="btn-text">Learn More</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-04-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="carousel-tabpanel-5"
+                                    class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item--visuallyhidden"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 5 of 6"
+                                    data-cmp-slide-no="5" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-05"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/carousel_5@2x.jpg 2x">
+                                                    <img src="icons/carousel_5@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-05-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-05-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #fff;">Automotive
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-05-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-05-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #fff;">
+                                                                Global Auto Partners Showcase the Future of AI</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-05-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-05-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;">Leading
+                                                                    companies across the transportation
+                                                                    industry—including Chery, GWM, JIYUE, NIO, smart,
+                                                                    and XPENG—adopt NVIDIA DRIVE® for their
+                                                                    next-generation vehicles.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-05-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-05-1" href="">
+                                                            <span class="btn-text">Learn More</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-05-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="carousel-tabpanel-6"
+                                    class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item--visuallyhidden"
+                                    role="tabpanel" aria-roledescription="slide" aria-label="Slide 6 of 6"
+                                    data-cmp-slide-no="6" data-cmp-hook-carousel="item" aria-hidden="true">
+                                    <div class="nv-container container">
+                                        <div id="container-06"
+                                            class="top-carusel-holder d-cont-h-xl l-cont-h-xl t-cont-h-xl m-cont-h-xl d-content-align-top">
+                                            <div class="nv-img-as-bg d-image-center img">
+                                                <picture>
+                                                    <source srcset="icons/carousel_6@2x.jpg 2x">
+                                                    <img src="icons/carousel_6@2x.jpg">
+                                                </picture>
+                                            </div>
+                                            <div class="general-container">
+                                                <div class="aem-Grid aem-Grid--default--12">
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-06-1" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-title aem-GridColumn--default--12">
+                                                        <div id="nv-title-06-1" class="general-container-text">
+                                                            <h2 class="title h--smaller" style="color: #fff;">AI</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-06-2" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div
+                                                        class="nv-title half-width aem-GridColumn--default--12 text h--large nv-no-top-padding">
+                                                        <div id="nv-title-06-2" class="general-container-text">
+                                                            <h2 class="title carousel_title_font" style="color: #fff;">
+                                                                Georgia Tech and NVIDIA Unveil New AI Makerspace Hub
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-06-3" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-text half-width">
+                                                        <div id="nv-text-06-1" class="general-container-text">
+                                                            <p style="margin: 0px">
+                                                                <span class="p--large" style="color: #fff;">In
+                                                                    collaboration with NVIDIA, Georgia Tech’s College of
+                                                                    Engineering has launched an AI supercomputing hub
+                                                                    for training a new generation of students.</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-06-4" class="cmp-separator"></div>
+                                                    </div>
+                                                    <div class="nv-button button aem-GridColumn--default--12">
+                                                        <a class="btn-content btncta" id="nv-button-06-1" href="">
+                                                            <span class="btn-text">Read Press Release</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="nv-separator separator aem-GridColumn--default--12">
+                                                        <div id="nv-separator-06-5" class="cmp-separator"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Carousel progress bar-->
+                            <div class="progressContainerWrapper" data-progressdecription="true">
+                                <div class="progressmaincontainer progressContainer" id="progressContainer_"
+                                    data-delay="7000" style="padding: 0px 0px 10px;">
+                                    <div class="progressBox activeBox" id="progress_box_1" data-theme="black"
+                                        onclick="carousel_switch('progress_box_1','carousel-tabpanel-1')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled01"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">AI</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">NVIDIA and ServiceNow Showcase
+                                                AI Avatars of the Future</p>
+                                        </div>
+                                    </div>
+                                    <div class="progressBox" id="progress_box_2" data-theme="White" onclick="carousel_switch('progress_box_2','carousel-tabpanel-2')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled02"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">Artificial Intelligence</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">NVIDIA CEO Jensen Huang at Dell
+                                                Technologies World</p>
+                                        </div>
+                                    </div>
+                                    <div class="progressBox" id="progress_box_3" data-theme="black"
+                                        onclick="carousel_switch('progress_box_3','carousel-tabpanel-3')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled03"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">AI</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">Join NVIDIA at Microsoft Build
+                                                2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="progressBox" id="progress_box_4" data-theme="black"
+                                        onclick="carousel_switch('progress_box_4','carousel-tabpanel-4')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled04"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">Artificial Intelligence</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">ChatRTX Update Available Now</p>
+                                        </div>
+                                    </div>
+                                    <div class="progressBox" id="progress_box_5" data-theme="black"
+                                        onclick="carousel_switch('progress_box_5','carousel-tabpanel-5')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled05"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">Automotive</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">Global Auto Partners Showcase
+                                                the Future of AI</p>
+                                        </div>
+                                    </div>
+                                    <div class="progressBox" id="progress_box_6" data-theme="black"
+                                        onclick="carousel_switch('progress_box_6','carousel-tabpanel-6')">
+                                        <div class="progress_filled_wrapper">
+                                            <div class="progress_filled" id="progress_filled06"></div>
+                                        </div>
+                                        <label class="progressLabel black"
+                                            style="color: rgba(255, 255, 255, 0.6);">AI</label>
+                                        <div class="progressDescription p--medium black two_row" data-maxlength="2">
+                                            <p style="color: rgba(255, 255, 255, 0.6);">Georgia Tech and NVIDIA Unveil
+                                                New AI Makerspace Hub</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Recommended-->
+                <div class="nv-rawhtml aem-GridColumn aem-GridColumn--default--12">
+                    <div id="homepage-recommendation-html-wrapper" class="general-container-text">
+                        <div class="top-container">
+                            <div class="sec-title">
+                                <h2 class="title page-title h--medium">Recommended</h2>
+                            </div>
+                            <div class="arrows">
+                                <button class="nxt-btn" type="button" aria-label="Next">
+                                    <span class="fa-regular fa fa-chevron-right" style="color:black"></span>
+                                </button>
+                                <button class="pre-btn" type="button" aria-label="Previous">
+                                    <span class="fa-regular fa fa-chevron-left" style="color:black"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="nv-container container responsivegrid aem-GridColumn aem-GridColumn--default--12" style="overflow:scroll">
+                            <div class="general-container" style="display: -webkit-inline-box; flex-wrap: nowrap"
+                                id="nv__card__container">
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="Get Started with Generative AI APIs"
+                                                        class="cmp-image__image" src="icons/recommended_1.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">AI | Announcement</div>
+                                                    <div class="cmp-teaser__title">Get Started with Generative AI APIs
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_2.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">Simulation | Announcement
+                                                    </div>
+                                                    <div class="cmp-teaser__title">NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_3.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">Gaming Hardware | News
+                                                    </div>
+                                                    <div class="cmp-teaser__title">GeForce RTX 40 Series Laptops</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_4.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">AI | Announcement</div>
+                                                    <div class="cmp-teaser__title">ChatRTX Update</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_5.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">AI | Blog</div>
+                                                    <div class="cmp-teaser__title"> See Jensen Huang Live at Knowledge
+                                                        2024</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_6.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">Simulation | Blog</div>
+                                                    <div class="cmp-teaser__title"> Unlocking the Future of
+                                                        Manufacturing With OpenUSD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_7.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">Gaming Hardware | Product
+                                                    </div>
+                                                    <div class="cmp-teaser__title"> GeForce RTX 40 Series Graphics Cards
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nv-teaser teaser nv-teaser--card nv-teaser--bg-white">
+                                    <a href="">
+                                        <div class="cmp-teaser">
+                                            <div class="cmp-teaser__recommend-img">
+                                                <div>
+                                                    <img alt="NVIDIA Omniverse Cloud APIs to Power Industrial Software Tools"
+                                                        class="cmp-image__image" src="icons/recommended_8.png">
+                                                </div>
+                                            </div>
+                                            <div class="general-container-text">
+                                                <div
+                                                    class="nv-card-data text-left lap-text-left tab-text-left mob-text-left">
+                                                    <div class="cmp-teaser__pretitle p--small">AI | Announcement</div>
+                                                    <div class="cmp-teaser__title"> NVIDIA ACE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Explore-->
+                <div
+                    class="nv-container container responsivegrid aem-GridColumn aem-GridColumn--default--12 gray_bckg_bar">
+                    <div id="gtc-stripbanner">
+                        <div class="general-container" style="overflow:hidden">
+                            <div class="aem-Grid aem-Grid--12">
+                                <div class="nv-image image" style="width:10%; float:left">
+                                    <div class="cmp-image">
+                                        <img src="icons/explore.svg">
+                                    </div>
+                                </div>
+                                <div class="nv-container container responsivegrid aem-GridColumn--default--10">
+                                    <div id="gtc-blade-text">
+                                        <div class="general-container">
+                                            <div class="aem-Grid aem-Grid--10">
+                                                <div class="nv-title text h--medium nv-no-bottom-padding">
+                                                    <h2 class="title">Explore What’s Next in AI With the Best of GTC
+                                                    </h2>
+                                                </div>
+                                                <div class="nv-text text">
+                                                    <div class="general-container-text">
+                                                        <div class="description">
+                                                            <p>
+                                                                <span class="p--large">All the informative and inspiring
+                                                                    sessions are now available to watch at your own
+                                                                    convenience. Don’t miss this opportunity to discover
+                                                                    the latest breakthroughs from the conference for the
+                                                                    era of AI.
+                                                                    <span class="custom-btn">
+                                                                        <a href="">
+                                                                            <strong>Watch On Demand Now
+                                                                                <span
+                                                                                    class="fa-solid fa fa-angle-right"></span>
+                                                                            </strong>
+                                                                        </a>
+                                                                    </span>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More Carousels -->
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12 white_bckg_bar">
+                    <div id="ai-data-science-blade" class="cmp-carousel">
+                        <h3 class="cmp-carousel__title h--medium">Artificial Intelligence</h3>
+                        <div class="cmp-carousel__content">
+                            <div class="cmp-carousel__slides fixed-width">
+                                <!-- slide items -->
+                            <div id="ai-data-science-blade-item-73dd98dde7-tabpanel" class="cmp-carousel__item cmp-carousel__item--hidden cmp-carousel__item-visible" style="margin: 0px">
+                                <div class="nv-teaser teaser">
+                                    <div class="general-container-text" style="line-height: 1.75em;">
+                                        <div class="" style="padding:0px;">
+                                            <div class="cmp-teaser__description">
+                                                <p><span class="p--large">AI is powering change in every industry. From generative AI and speech recognition to medical imaging and improved supply chain management, AI is providing enterprises the compute power, tools, and algorithms their teams need to do their life's work.</span></p>
+                                            </div>
+                                            <div class="cmp-teaser__action-container">
+                                                <div class="main">
+                                                    <div class="row1 cmp-teaser__quick-links">
+                                                        <div class="col" style="float:left">
+                                                          <span class="cmp-teaser__action-icon fa-solid fa fa-chevron-down" style="color:#76b900"></span>
+                                                        </div>
+                                                        <div class="col" style="margin-left: 10px">
+                                                          <p class="quick-links-text">Quick Links </p>
+                                                        </div>
+                                                       </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ai-data-science-blade-item-9823e978f5-tabpanel" class="cmp-carousel__item cmp-carousel__item--visuallyhidden">
+                                <div class="nv-teaser teaser nv-teaser--card">
+                                    <div id="nv-teaser-9823e978f5" class="cmp-teaser">
+                                        <div class="nv-teaser--holder">
+                                            <div class="cmp-teaser__image">
+                                                <a class="cmp-image__link" href="https://blogs.nvidia.com/blog/nvidia-servicenow-jensen-huang">
+                                                    <img class="cmp-image__image" alt="See Jensen Huang Live at Knowledge 2024" title="See Jensen Huang Live at Knowledge 2024" src="icons/nvidia-servicenow-sfg-1920x1080.jpeg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="https://blogs.nvidia.com/blog/nvidia-servicenow-jensen-huang" class="cmp-teaser__link-entire-card">
+                                            <div class="general-container-text">
+                                                <div class="text-left lap-text-left tab-text-left mob-text-left" style="padding: 0px 20px; width: calc(100% - 40px);">
+                                                    <div class="cmp-teaser__pretitle" style="margin: 0px; padding-top: 15px">AI | Blog</div>
+                                                    <h3 class="cmp-teaser__title h--smallest" data-titlerow="One" data-titlerowlaptop="One" data-titlerowtablet="One" style="margin-bottom: 15px">
+                                                        See Jensen Huang Live at Knowledge 2024
+                                                    </h3>
+                                                    <div class="cmp-teaser__description" style="padding-bottom: 15px">
+                                                        <p>NVIDIA’s founder and CEO will join ServiceNow’s president and COO on stage for a live keynote.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ai-data-science-blade-item-9823e978f5-tabpanel" class="cmp-carousel__item cmp-carousel__item--visuallyhidden">
+                                <div class="nv-teaser teaser nv-teaser--card">
+                                    <div id="nv-teaser-9823e978f5" class="cmp-teaser">
+                                        <div class="nv-teaser--holder">
+                                            <div class="cmp-teaser__image">
+                                                <a class="cmp-image__link" href="https://www.nvidia.com/en-us/events/dell-technologies-world/">
+                                                    <img class="cmp-image__image" alt="Jensen Huang Joins Michael Dell at Dell Technologies World" title="Jensen Huang Joins Michael Dell at Dell Technologies World" src="icons/dell-tech-world-sfg.jpeg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.nvidia.com/en-us/events/dell-technologies-world/" class="cmp-teaser__link-entire-card">
+                                            <div class="general-container-text">
+                                                <div class="text-left lap-text-left tab-text-left mob-text-left" style="padding: 0px 20px; width: calc(100% - 40px);">
+                                                    <div class="cmp-teaser__pretitle" style="margin: 0px; padding-top: 15px">Artificial Intelligence | Event</div>
+                                                    <h3 class="cmp-teaser__title h--smallest" data-titlerow="One" data-titlerowlaptop="One" data-titlerowtablet="One" style="margin-bottom: 15px">
+                                                        Jensen Huang Joins Michael Dell at Dell Technologies World
+                                                    </h3>
+                                                    <div class="cmp-teaser__description" style="padding-bottom: 15px">
+                                                        <p>The two CEOs will dive into how AI is igniting innovation across enterprises.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ai-data-science-blade-item-9823e978f5-tabpanel" class="cmp-carousel__item cmp-carousel__item--visuallyhidden">
+                                <div class="nv-teaser teaser nv-teaser--card">
+                                    <div id="nv-teaser-9823e978f5" class="cmp-teaser">
+                                        <div class="nv-teaser--holder">
+                                            <div class="cmp-teaser__image">
+                                                <a class="cmp-image__link" href="https://www.nvidia.com/en-us/ai-on-rtx/chatrtx/">
+                                                    <img class="cmp-image__image" alt="See Jensen Huang Live at Knowledge 2024" title="See Jensen Huang Live at Knowledge 2024" src="icons/nvidia-chatrtx-sfg.jpeg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.nvidia.com/en-us/ai-on-rtx/chatrtx/" class="cmp-teaser__link-entire-card">
+                                            <div class="general-container-text">
+                                                <div class="text-left lap-text-left tab-text-left mob-text-left" style="padding: 0px 20px; width: calc(100% - 40px);">
+                                                    <div class="cmp-teaser__pretitle" style="margin: 0px; padding-top: 15px">AI | Announcement</div>
+                                                    <h3 class="cmp-teaser__title h--smallest" data-titlerow="One" data-titlerowlaptop="One" data-titlerowtablet="One" style="margin-bottom: 15px">                                  
+                                                        ChatRTX Update
+                                                    </h3>
+                                                    <div class="cmp-teaser__description" style="padding-bottom: 15px">
+                                                        <p>New features include support for voice and image search, plus new models.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ai-data-science-blade-item-9823e978f5-tabpanel" class="cmp-carousel__item cmp-carousel__item--visuallyhidden">
+                                <div class="nv-teaser teaser nv-teaser--card">
+                                    <div id="nv-teaser-9823e978f5" class="cmp-teaser">
+                                        <div class="nv-teaser--holder">
+                                            <div class="cmp-teaser__image">
+                                                <a class="cmp-image__link" href="https://coe.gatech.edu/news/2024/04/georgia-tech-unveils-new-ai-makerspace-collaboration-nvidia">
+                                                    <img class="cmp-image__image" alt="Georgia Tech and NVIDIA Unveil New AI Makerspace" title="Georgia Tech and NVIDIA Unveil New AI Makerspace" src="icons/her-georgia-tech-2024-sfg-1920x1080.jpeg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="https://coe.gatech.edu/news/2024/04/georgia-tech-unveils-new-ai-makerspace-collaboration-nvidia" class="cmp-teaser__link-entire-card">
+                                            <div class="general-container-text">
+                                                <div class="text-left lap-text-left tab-text-left mob-text-left" style="padding: 0px 20px; width: calc(100% - 40px);">
+                                                    <div class="cmp-teaser__pretitle" style="margin: 0px; padding-top: 15px">AI | Blog</div>
+                                                    <h3 class="cmp-teaser__title h--smallest" data-titlerow="One" data-titlerowlaptop="One" data-titlerowtablet="One" style="margin-bottom: 15px">
+                                                        Georgia Tech and NVIDIA Unveil New AI Makerspace
+                                                    </h3>
+                                                    <div class="cmp-teaser__description" style="padding-bottom: 15px">
+                                                        <p>This supercomputing hub is a digital sandbox where students can apply AI in the classroom.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-carousel-home carousel panelcontainer nv-carousel--arrows-topright nv-carousel--hide-indicators aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-separator separator aem-GridColumn aem-GridColumn--default--12"></div>
+                <div class="nv-rawhtml aem-GridColumn aem-GridColumn--default--12"></div>
+                
+            </div>
+        </div>
+        <!--Footer-->
+        <div class="footer">
+            <div class="page-footer-wrapper" id="brandFooter">
+                <div class="page-footer">
+                    <div class="page-footer__links">
+                        <div class="page-footer-link-set set-3">
+                            <div class="page-footer-link-set__title">Company Information</div>
+                            <ul class="page-footer-link-set__links">
+                                <li><a href="https://www.nvidia.com/en-us/about-nvidia/" target="_self">About Us</a></li>
+                                <li><a href="https://images.nvidia.com/aem-dam/Solutions/homepage/pdf/NVIDIA-Story.pdf">Company Overview</a></li>
+                                <li><a href="https://investor.nvidia.com/home/default.aspx">Investors</a></li>
+                                <li><a href="https://www.nventures.ai">Venture Capital (NVentures)</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/foundation/">NVIDIA Foundation</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/research/">Research</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/csr/">Social Responsibility</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/technologies/">Technologies</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/about-nvidia/careers/">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="page-footer-link-set set-3">
+                            <div class="page-footer-link-set__title">News and Events</div>
+                            <ul class="page-footer-link-set__links">
+                                <li><a href="https://nvidianews.nvidia.com/">Newsroom</a></li>
+                                <li><a href="https://blogs.nvidia.com/">Company Blog</a></li>
+                                <li><a href="https://developer.nvidia.com/blog/">Technical Blog</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/about-nvidia/webinar-portal/">Webinars</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/preferences/email-signup/">Stay Informed</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/events/">Events Calendar</a></li>
+                                <li><a href="https://www.nvidia.com/gtc/">GTC AI Conference</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/on-demand/">NVIDIA On-Demand</a></li>
+                            </ul>
+                        </div>
+                        <div class="page-footer-link-set set-3">
+                            <div class="page-footer-link-set__title">Popular Links</div>
+                            <ul class="page-footer-link-set__links">
+                                <li><a href="https://developer.nvidia.com/">Developers</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/about-nvidia/partners/">Partners</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/executive-insights/">Executive Insights</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/startups/">Startups and VCs</a></li>
+                                <li><a href="https://docs.nvidia.com/">Documentation</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/training/">Technical Training</a></li>
+                                <li><a href="https://academy.nvidia.com/en/">Training for IT Professionals</a></li>
+                                <li><a href="https://www.nvidia.com/en-us/ai-data-science/professional-services/">Professional Services for Data Science</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page-footer__subscribe">
+
+                        <div class="center-content">
+                            <div class="subscribe-logo">
+                                <img src="icons/subscribe.png" alt="Subscribe" style="width: 48;
+                                 height: 36">
+                            </div>
+                            <div class="subscribe-text">
+                                <span>Sign Up for NVIDIA News</span>
+                            </div>
+                            <div class="button">
+                                <div class="btn-content" style="padding: 0px">
+                                    <a class="btn-content" href="https://www.nvidia.com/en-us/preferences/email-signup/">
+                                        <div class="btn-text"> Subscribe </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-footer__social">
+                        <div class="page-footer__social__label">Follow NVIDIA</div>
+                        <a href="https://www.facebook.com/NVIDIA" class="footer__social__link fa fa-facebook">
+                        </a>
+                        <a href="https://www.instagram.com/nvidia/?hl=en" class="footer__social__link fa fa-instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/nvidia/" class="footer__social__link fa fa-linkedin">
+                        </a>
+                        <a href="https://twitter.com/nvidia" class="page-footer__social__link fa fa-twitter">
+                        </a>
+                        <a href="https://www.youtube.com/user/nvidia" class="page-footer__social__link fa fa-youtube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="global-footer-container">
+                <div class="global-footer" id="globalFooter">
+                    <img class="global-footer__logo" alt="NVIDIA" src="icons/brand_black_white.png">
+                    <div class="global-footer__region">
+                        <a href="https://www.nvidia.com/en-us/location-selector/">
+                            <span class="global-footer__region__label">United States</span>
+                        </a>
+                    </div>
+                    <ul class="global-footer__links">
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/privacy-center/">Manage My Privacy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/preferences/email-preferences/">Do Not Sell or Share My Data</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/about-nvidia/terms-of-service/">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/about-nvidia/company-policies/">Corporate Policies</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+                        </li>
+                        <li>
+                            <a href="https://www.nvidia.com/en-us/contact/">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="global-footer__copyright">Copyright © 2024 NVIDIA Corporation</div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
